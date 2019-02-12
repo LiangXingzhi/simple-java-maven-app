@@ -1,5 +1,7 @@
 package com.mycompany.app;
 
+import org.apache.commons.io.FileUtils;
+
 /**
  * Hello world!
  */
@@ -12,6 +14,7 @@ public class App
 
     public static void main(String[] args) {
         System.out.println(new App().getMessage());
+        System.out.println(FileUtils.getUserDirectory());
     }
 
     private final String getMessage() {
