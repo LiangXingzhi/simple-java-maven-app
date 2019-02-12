@@ -80,7 +80,7 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>wagon-maven-plugin</artifactId>
 				<configuration>
-					<url>scp://ecap@repo.centos701.com/repo/maven2</url>
+					<url>file://ejpyogroup01001.jp.ao.ericsson.se/Proj/Special30/DCM_NFV_17/11. ECAP/12_ECAP_Phase_II/12.12_ECAP_Release/ECAP_V1.2.0/Release Documents2/</url>
 					<includes>**</includes>
 				</configuration>
 
@@ -101,14 +101,29 @@
 				<artifactId>wagon-ssh</artifactId>
 				<version>3.3.2</version>
 			</extension>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-file</artifactId>
+				<version>3.3.2</version>
+			</extension>
 		</extensions>
+		
 	</build>
 	<distributionManagement>
+		<!-- 
 		<repository>
 			<uniqueVersion>false</uniqueVersion>
 			<id>my-ssh-repo</id>
 			<name>Corporate Repository</name>
 			<url>scp://ecap@repo.centos701.com/repo/maven2</url>
+			<layout>default</layout>
+		</repository>
+		 -->
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>my-ssh-repo2</id>
+			<name>Corporate Repository</name>
+			<url>file://ejpyogroup01001.jp.ao.ericsson.se/Proj/Special30/DCM_NFV_17/11. ECAP/12_ECAP_Phase_II/12.12_ECAP_Release/ECAP_V1.2.0/Release Documents2/</url>
 			<layout>default</layout>
 		</repository>
 		<!-- <snapshotRepository> <uniqueVersion>true</uniqueVersion> <id>propSnap</id> 
