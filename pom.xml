@@ -49,6 +49,15 @@
 						</manifest>
 					</archive>
 				</configuration>
+				<executions>
+					<execution>
+						<id>build-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
