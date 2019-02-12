@@ -17,7 +17,7 @@
 		</dependency>
 	</dependencies>
 	<scm>
-		<developerConnection>scm:git:git://github.com/LiangXingzhi/simple-java-maven-app.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:LiangXingzhi/simple-java-maven-app.git</developerConnection>
 	</scm>
 	<build>
 		<pluginManagement>
