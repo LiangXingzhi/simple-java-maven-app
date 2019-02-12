@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany.app</groupId>
 	<artifactId>my-app</artifactId>
@@ -50,12 +52,30 @@
 					</archive>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<configuration>
+					<url>scp://ecap@repo.centos701.com/repo/maven2</url>
+					<includes>**</includes>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>list-dir</id>
+						<phase>package</phase>
+						<goals>
+							<goal>list</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 		<extensions>
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
 				<artifactId>wagon-ssh</artifactId>
-				<version>2.3</version>
+				<version>3.3.2</version>
 			</extension>
 		</extensions>
 	</build>
@@ -70,5 +90,5 @@
 		<!-- <snapshotRepository> <uniqueVersion>true</uniqueVersion> <id>propSnap</id> 
 			<name>Propellors Snapshots</name> <url>sftp://propellers.net/maven</url> 
 			<layout>legacy</layout> </snapshotRepository> -->
-	</distributionManagement>	
+	</distributionManagement>
 </project>
